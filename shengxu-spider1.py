@@ -26,7 +26,7 @@ for i in lists.dl.children:
             list_res=urllib.request.urlopen(list_req)
             list_html=list_res.read().decode('gbk')
             list_soup=BeautifulSoup(list_html,'lxml')
-            chapter_name=list_soup.find('div',class_='bookname').text
+            chapter_name=list_soup.find('div',class_='bookname').text  #chapter_name=list_soup.find('h1').text或 chapter_name=list_soup.find('h1').string
             chapter=list_soup.find('div',id='content').text
             #将爬取内容写入文件
             file.write(chapter_name)
